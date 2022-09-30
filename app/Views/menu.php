@@ -52,8 +52,8 @@
   <section class="food_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
-        <div class="logo" >
-        <img style="max-width:100%;height: auto;" src="<?= base_url('assets/frontend/images/logo1.png'); ?>" alt="" srcset="">
+        <div class="logo" >      
+        <img style="max-width:100%;height: auto;" src="<?= base_url('assets/frontend/images/logo8.png'); ?>" alt="logo" srcset="">
         </div>
         <h2>
          Lezzet Lokantası
