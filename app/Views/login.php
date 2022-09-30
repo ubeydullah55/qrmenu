@@ -17,7 +17,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-  <img width="250px" height="150px" src="<?= base_url(''); ?>/assets/frontend/images/logo1.png" alt="logo">
+  <img style="max-width:100%;height: auto;" src="<?= base_url(''); ?>/assets/frontend/images/logo1.png" alt="logo">
 
     <a href="#"><b>Lezzet</b>Lokantası</a>
   </div>
