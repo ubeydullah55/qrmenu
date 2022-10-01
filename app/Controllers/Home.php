@@ -20,12 +20,7 @@ class Home extends BaseController
 
     public function index()
     {
-        $modelcategories= new \App\Models\UserModel;
-        $modelproducts= new \App\Models\ProductsModel;
-        $data['category']=$modelcategories->findAll();
-        $data['products']=$modelproducts->where('is_active',1)->findAll();
-
-        return view('menu',$data);       
+            
   
     }
 
@@ -60,18 +55,18 @@ class Home extends BaseController
             if(!empty($categortyInsert)){
                 $session =session();
                 session()->setFlashdata('info','Kategori başarılı bir şekilde eklendi');    
-                return redirect()->to('category'); 
+                return redirect()->to('panel/category'); 
             }
             else{
                 $session =session();
                 session()->setFlashdata('danger','-HATA-Kategori eklenirken bir hata oluştu....');    
-                return redirect()->to('category'); 
+                return redirect()->to('panel/category'); 
             }
         }
         else{
             $session =session();
             session()->setFlashdata('danger','-HATA-Lütfen kategori ismi giriniz...');    
-            return redirect()->to('category');
+            return redirect()->to('panel/category');
         }
         
        
@@ -91,7 +86,7 @@ class Home extends BaseController
       
         $session =session();
         session()->setFlashdata('info','Kategori silme başarılı');
-        return redirect()->to('category'); 
+        return redirect()->to('panel/category'); 
         
         
     }
@@ -114,7 +109,7 @@ class Home extends BaseController
         if($categoryUpdate){
             $session =session();
 			session()->setFlashdata('info','-BAŞARILI-Kategori ekleme işlemi yapılmıştır');
-            return redirect()->to('category'); 
+            return redirect()->to('panel/category'); 
         }
        
 
@@ -137,7 +132,7 @@ class Home extends BaseController
            if($productPassive){
              $session =session();
              session()->setFlashdata('info','-BAŞARILI-Ürün Pasif hale getirildi...');
-             return redirect()->to('product');
+             return redirect()->to('panel/product');
            }
            
         }
@@ -146,14 +141,14 @@ class Home extends BaseController
             if($productActive){
                 $session =session();
                 session()->setFlashdata('info','-BAŞARILI-Ürün Aktif hale getirildi...');
-                return redirect()->to('product');   
+                return redirect()->to('panel/product');   
             }
             
          }
          else{
             $session =session();
             session()->setFlashdata('danger','-HATA- Bir hata oluştu');
-            return redirect()->to('product');
+            return redirect()->to('panel/product');
          }
         
     }
@@ -169,12 +164,12 @@ class Home extends BaseController
            if($productDelete){
              $session =session();
              session()->setFlashdata('info','-BAŞARILI-Ürün veritabanından silindi...');
-             return redirect()->to('product');
+             return redirect()->to('panel/product');
            }      
         }
         $session =session();
         session()->setFlashdata('danger','-HATA- Bir hata oluştu');
-        return redirect()->to('product');
+        return redirect()->to('panel/product');
         
     }
 
@@ -191,7 +186,7 @@ class Home extends BaseController
      
         $session =session();
         session()->setFlashdata('danger','-HATA- Bir hata oluştu');
-        return redirect()->to('product');
+        return redirect()->to('panel/product');
     }
 
     public function productEdit($id){
@@ -210,12 +205,12 @@ class Home extends BaseController
         if(empty($data['productName'])){
             $session =session();
 			session()->setFlashdata('danger','Ürün ismi boş bırakılamaz');
-            return redirect()->to('product');
+            return redirect()->to('panel/product');
         }
         if(empty($data['categoryid'])){
             $session =session();
 			session()->setFlashdata('danger','Kategori seçimi boş bırakılamaz');
-            return redirect()->to('product');
+            return redirect()->to('panel/product');
         }
         if(!empty($data['productName']) && !empty($data['categoryid'])){
             if($img->isValid()){     
@@ -235,12 +230,12 @@ class Home extends BaseController
                     if($editProducts){
                         $session =session();
                         session()->setFlashdata('info','Ürün güncelleme başarılı');
-                        return redirect()->to('product'); 
+                        return redirect()->to('panel/product'); 
                     }
                     else{
                         $session =session();    //ürün resmi seçilmiş güncelleme yapılmamış
                         session()->setFlashdata('danger','Ürün güncellenirken bir hata oldu....');
-                        return redirect()->to('product');
+                        return redirect()->to('panel/product');
                     }        
             }else{
                 //img is valid yani rsim değişimi yoksa
@@ -256,7 +251,7 @@ class Home extends BaseController
                 if($editProducts){
                         $session =session();
                         session()->setFlashdata('info','Ürün güncelleme başarılı');
-                        return redirect()->to('product'); 
+                        return redirect()->to('panel/product'); 
                 }
 
             }
@@ -264,11 +259,11 @@ class Home extends BaseController
         if(empty($data['productName']) || empty($data['categoryid'])){
             $session =session();
             session()->setFlashdata('danger','Ürün adı yada category seçimi yapılmadı...'); 
-            return redirect()->to('product');
+            return redirect()->to('panel/product');
         }
             $session =session();
             session()->setFlashdata('info','Ürün güncellenirken bir hata oluştu');    
-            return redirect()->to('product');
+            return redirect()->to('panel/product');
         
         
         
@@ -290,17 +285,17 @@ class Home extends BaseController
         if(empty($data['productName'])){
             $session =session();
 			session()->setFlashdata('danger','Ürün ismi boş bırakılamaz');
-            return redirect()->to('productInsertView');
+            return redirect()->to('panel/productInsertView');
         }
         if(empty($data['categoryid'])){
             $session =session();
 			session()->setFlashdata('danger','Kategori seçimi boş bırakılamaz');
-            return redirect()->to('productInsertView');
+            return redirect()->to('panel/productInsertView');
         }
         if(!empty($nameControl)){
             $session =session();
 			session()->setFlashdata('danger','Bu isimde bir ürün zaten mevcuttur');
-            return redirect()->to('productInsertView');//Ayı isimli ürün varsa
+            return redirect()->to('panel/productInsertView');//Ayı isimli ürün varsa
         }
      
 
@@ -320,30 +315,30 @@ class Home extends BaseController
                 if($insertProducts){
                     $session =session();
                     session()->setFlashdata('info','Ürün ekleme başarılı');
-                    return redirect()->to('product'); 
+                    return redirect()->to('panel/product'); 
                 }
                       
         }
         else{
             $session =session();
             session()->setFlashdata('danger','Ürün resmi seçilmedi');
-            return redirect()->to('productInsertView');
+            return redirect()->to('panel/productInsertView');
         }
     }
     if(!empty($nameControl)){
         $session =session();
         session()->setFlashdata('danger','Bu isimde bir ürün zaten mevcut...');    
-        return redirect()->to('productInsertView'); 
+        return redirect()->to('panel/productInsertView'); 
     }
     if(empty($data['productName']) && empty($data['categoryid'])){
         $session =session();
         session()->setFlashdata('danger','Ürün adı ve Kategori boş bırakılamaz...');    
-        return redirect()->to('productInsertView'); 
+        return redirect()->to('panel/productInsertView'); 
         
     }
         $session =session();
         session()->setFlashdata('danger','Ürün eklerken bir hata oluştu');    
-        return redirect()->to('productInsertView'); 
+        return redirect()->to('panel/productInsertView'); 
         
     }
 
@@ -364,12 +359,12 @@ class Home extends BaseController
         if(isset($callDelete)){
             $session =session();
             session()->setFlashdata('info','-BAŞARILI-Veri silinmiştir....');      
-            return redirect()->to('callView');
+            return redirect()->to('panel/callView');
         }
         else{
             $session =session();
             session()->setFlashdata('danger','-HATA-Silme işlemi gerçekleştirilemedi....');
-            return redirect()->to('callView');
+            return redirect()->to('panel/callView');
         }
         
         
@@ -378,7 +373,7 @@ class Home extends BaseController
 
     public function quit(){
         session_destroy();
-        return redirect()->to('/panel');
+        return redirect()->to('/login');
     }
 
     

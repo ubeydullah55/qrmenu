@@ -37,36 +37,35 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Anasayfa::index');
 
-
 $routes->get('/login', 'Login::index');
 $routes->post('/login/kontrol', 'Login::kontrol');
 
 
-
-
 $routes->group('panel', static function ($routes) {
     $routes->get('/', 'Home::panel');
-$routes->get('/category', 'Home::category');
-$routes->get('/product', 'Home::urun');
-$routes->post('/category_insert', 'Home::category_insert');
-$routes->get('/categoryEditView/(:num)', 'Home::categoryEditView/$1');
-$routes->post('/categoryEdit/(:num)', 'Home::categoryEdit/$1');
-$routes->get('/categoryDelete/(:num)', 'Home::categoryDelete/$1');
-$routes->get('/products_info/(:num)/(:num)', 'Home::productsInfo/$1/$2');
-$routes->get('/productsDelete/(:num)', 'Home::productsDelete/$1');
-$routes->get('/productsEditView/(:num)', 'Home::productsEditView/$1');
-$routes->get('/call/(:num)', 'Anasayfa::call/$1');
-$routes->get('/callView', 'Home::call_view');
-$routes->get('/callDelete/(:num)', 'Home::callDelete/$1');
-$routes->post('/productEdit/(:num)', 'Home::productEdit/$1');
-$routes->get('/productInsertView', static function () {
-    $modelcategories= new \App\Models\UserModel;
-    $data['category']=$modelcategories->findAll();
-    return view('/backend/productInsertView',$data);
+    $routes->get('category', 'Home::category');
+    $routes->get('product', 'Home::urun');
+    $routes->post('category_insert', 'Home::category_insert');
+    $routes->get('categoryEditView/(:num)', 'Home::categoryEditView/$1');
+    $routes->post('categoryEdit/(:num)', 'Home::categoryEdit/$1');
+    $routes->get('categoryDelete/(:num)', 'Home::categoryDelete/$1');
+    $routes->get('products_info/(:num)/(:num)', 'Home::productsInfo/$1/$2');
+    $routes->get('productsDelete/(:num)', 'Home::productsDelete/$1');
+    $routes->get('productsEditView/(:num)', 'Home::productsEditView/$1');
+    $routes->get('call/(:num)', 'Anasayfa::call/$1');
+    $routes->get('callView', 'Home::call_view');
+    $routes->get('callDelete/(:num)', 'Home::callDelete/$1');
+    $routes->post('productEdit/(:num)', 'Home::productEdit/$1');
+    $routes->get('productInsertView', static function () {
+        $modelcategories= new \App\Models\UserModel;
+        $data['category']=$modelcategories->findAll();
+        return view('/backend/productInsertView',$data);
+    });
+    $routes->post('insertProduct', 'Home::insertProduct');
+    $routes->get('quit', 'Home::quit');
 });
-$routes->post('/insertProduct', 'Home::insertProduct');
-$routes->get('/quit', 'Home::quit');
-});
+
+
 
 /*
  * --------------------------------------------------------------------

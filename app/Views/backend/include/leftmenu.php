@@ -46,7 +46,7 @@
           </li>
           <?php if($session->get('yetki')==0 || $session->get('yetki')==1): ?>
           <li class="nav-item">
-            <a href="<?= base_url('/category'); ?>" class="nav-link">
+            <a href="<?= base_url('panel/category'); ?>" class="nav-link">
               <i class="nav-icon fas fa-bars" style="color:yellow"></i>
               <p>
                 Kategori Ekle            
@@ -56,7 +56,7 @@
           <?php endif ?>
           <?php if($session->get('yetki')==0 || $session->get('yetki')==1): ?>
           <li class="nav-item">
-            <a href="<?= base_url('product') ?>" class="nav-link">
+            <a href="<?= base_url('panel/product') ?>" class="nav-link">
               <i class="nav-icon fas fa-eye" style="color:#339999"></i>
               <p>
               Ürünler             
@@ -66,7 +66,7 @@
           <?php endif ?>
           <?php if($session->get('yetki')==0 || $session->get('yetki')==1): ?>
           <li class="nav-item">
-            <a href="<?= base_url('productInsertView') ?>" class="nav-link">
+            <a href="<?= base_url('panel/productInsertView') ?>" class="nav-link">
               <i class="nav-icon fas fa-plus" style="color:#669e85"></i>
               <p>
                 Ürün Ekle             
@@ -75,7 +75,7 @@
           </li>
           <?php endif ?>
           <li class="nav-item">
-            <a href="<?= base_url('callView') ?>" class="nav-link">
+            <a href="<?= base_url('panel/callView') ?>" class="nav-link">
               <i class="nav-icon fas fa-bullhorn" style="color:#629e85"></i>
               <p>
                 Garson Bekleyenler            
@@ -84,7 +84,7 @@
           </li>
         <?php if($session->get('yetki')==0): ?>
          <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="<?= base_url('employeAddView') ?>" class="nav-link">
             <i class="fa fa-user-plus" style="color:pink" aria-hidden="true"></i>
               <p>
               Personel Ekle          
@@ -103,7 +103,7 @@
           </li>
          <?php endif ?>
           <li class="nav-item">
-            <a href="<?= base_url('quit') ?>" class="nav-link">
+            <a href="<?= base_url('panel/quit') ?>" class="nav-link">
             <i class="fa fa-arrow-right" style="color:red" aria-hidden="true"></i>
               <p>
                 Çıkış            
