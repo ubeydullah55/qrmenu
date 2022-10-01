@@ -367,8 +367,6 @@ class Home extends BaseController
             return redirect()->to('panel/callView');
         }
         
-        
-
     }
 
     public function quit(){

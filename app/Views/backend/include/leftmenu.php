@@ -84,7 +84,7 @@
           </li>
         <?php if($session->get('yetki')==0): ?>
          <li class="nav-item">
-            <a href="<?= base_url('employeAddView') ?>" class="nav-link">
+            <a href="<?= base_url('panel/employeAddView') ?>" class="nav-link">
             <i class="fa fa-user-plus" style="color:pink" aria-hidden="true"></i>
               <p>
               Personel Ekle          

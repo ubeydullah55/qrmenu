@@ -40,7 +40,6 @@ $routes->get('/', 'Anasayfa::index');
 $routes->get('/login', 'Login::index');
 $routes->post('/login/kontrol', 'Login::kontrol');
 
-
 $routes->group('panel', static function ($routes) {
     $routes->get('/', 'Home::panel');
     $routes->get('category', 'Home::category');
@@ -56,11 +55,18 @@ $routes->group('panel', static function ($routes) {
     $routes->get('callView', 'Home::call_view');
     $routes->get('callDelete/(:num)', 'Home::callDelete/$1');
     $routes->post('productEdit/(:num)', 'Home::productEdit/$1');
+
+    $routes->get('employeAddView', static function () { 
+        return view('backend/employeAddView',$data);
+    });
     $routes->get('productInsertView', static function () {
         $modelcategories= new \App\Models\UserModel;
         $data['category']=$modelcategories->findAll();
         return view('/backend/productInsertView',$data);
     });
+
+
+    
     $routes->post('insertProduct', 'Home::insertProduct');
     $routes->get('quit', 'Home::quit');
 });
