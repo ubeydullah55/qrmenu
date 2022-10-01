@@ -36,7 +36,16 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Anasayfa::index');
-$routes->get('/panel', 'Home::panel');
+
+
+$routes->get('/login', 'Login::index');
+$routes->post('/login/kontrol', 'Login::kontrol');
+
+
+
+
+$routes->group('panel', static function ($routes) {
+    $routes->get('/', 'Home::panel');
 $routes->get('/category', 'Home::category');
 $routes->get('/product', 'Home::urun');
 $routes->post('/category_insert', 'Home::category_insert');
@@ -56,9 +65,8 @@ $routes->get('/productInsertView', static function () {
     return view('/backend/productInsertView',$data);
 });
 $routes->post('/insertProduct', 'Home::insertProduct');
-$routes->get('/login', 'Login::index');
-$routes->post('/login/kontrol', 'Login::kontrol');
 $routes->get('/quit', 'Home::quit');
+});
 
 /*
  * --------------------------------------------------------------------

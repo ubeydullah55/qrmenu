@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 30 Eyl 2022, 22:48:37
--- Sunucu sürümü: 10.4.22-MariaDB
--- PHP Sürümü: 8.1.2
+-- Üretim Zamanı: 01 Eki 2022, 19:19:21
+-- Sunucu sürümü: 10.4.24-MariaDB
+-- PHP Sürümü: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Veritabanı: `qrmenu`
+-- Veritabanı: `qrmenu_test`
 --
 
 -- --------------------------------------------------------
@@ -87,7 +87,7 @@ CREATE TABLE `kullanici` (
 --
 
 INSERT INTO `kullanici` (`id`, `k_adi`, `k_sifre`, `ad`, `soyad`, `unvan`, `yetki`) VALUES
-(1, '05541897255', '1453', 'Ubeydullah', 'DOĞAN', 'Müdür', 0),
+(1, '05541897234', '1453', 'Ubeydullah', 'DOĞAN', 'Müdür', 0),
 (8, '05357915561', '3455', 'Deneme', 'Verisi', 'YÖNETİCİ', 1),
 (13, '05551897264', '123456', 'Garson ', 'Deneme', 'Garson', 2);
 

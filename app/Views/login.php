@@ -18,8 +18,7 @@
 <div class="login-box">
   <div class="login-logo">
   <img style="max-width:100%;height: auto;" src="<?= base_url(''); ?>/assets/frontend/images/logo1.png" alt="logo">
-
-    <a href="#"><b>Lezzet</b>Lokantası</a>
+    <a href="#"><b>Dogan</b>Lokantası</a>
   </div>
   <?php if(session()->get('danger')) : ?>             
               <div class="alert alert-danger" role="alert">
