@@ -84,7 +84,7 @@
                   ?>
                 <h5 class="card-title">Süre:<b style="color:purple;"><?php  echo $islem  ?>dk</b></h5>
        
-                <a href="<?= base_url('callDelete/'.$row['id']) ?>" onclick="return confirm('Silmek istediğinize eminmisiniz?')" class="btn btn-tool btn-link"><i class="fa fa-trash" aria-hidden="true" style="color:#cd5c5c"></i></a>
+                <a href="<?= base_url('panel/callDelete/'.$row['id']) ?>" onclick="return confirm('Silmek istediğinize eminmisiniz?')" class="btn btn-tool btn-link"><i class="fa fa-trash" aria-hidden="true" style="color:#cd5c5c"></i></a>
                 </div>
               </div>
             </div>

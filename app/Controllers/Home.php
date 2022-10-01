@@ -24,6 +24,7 @@ class Home extends BaseController
   
     }
 
+
     public function panel()
     {
         $modelcategories= new \App\Models\UserModel;
@@ -368,6 +369,65 @@ class Home extends BaseController
         }
         
     }
+
+    public function employeInsert(){
+        $modelKullanici= new \App\Models\KullaniciModel;
+       
+        $employeName=$this->request->getPost('employeName');
+        $employeSurName=$this->request->getPost('employeSurName');
+        $employeNumber=$this->request->getPost('employeNumber');
+        $employePassword=$this->request->getPost('employePassword');
+        $unvan=$this->request->getPost('unvan');
+        $unvanNo=2;
+        if($unvan=="GARSON"){
+            $unvanNo=2;
+        }
+        if($unvan=="YETKİLİ"){
+            $unvanNo=1;
+        }
+        if($unvan=="MÜDÜR"){
+            $unvanNo=0;
+        }
+        $data=array(
+            'k_adi'=>$employeNumber,
+            'k_sifre'=>$employePassword,
+            'ad'=>$employeName,
+            'soyad'=>$employeSurName,
+            'unvan'=>$unvan,
+            'yetki'=>$unvanNo
+        );
+       
+            $employeInsert=$modelKullanici->insert($data);
+            if(!empty($employeInsert)){
+                $session =session();
+                session()->setFlashdata('info','Personel başarılı bir şekilde eklendi');
+                return redirect()->to('panel/employeAddView');    
+            }
+            else{
+                $session =session();
+                session()->setFlashdata('danger','-HATA-Personel eklenirken bir hata oluştu....');    
+                return redirect()->to('panel/employeAddView');
+            }
+      
+    }
+
+    public function employeDelete($id)
+    {
+        $modelKullanici= new \App\Models\KullaniciModel;
+        $data['employe']=$modelKullanici->find($id);     
+        $employeDelete=$modelKullanici->where('id',$id)->delete();
+           if(!empty($employeDelete)){
+             $session =session();
+             session()->setFlashdata('info','-BAŞARILI-Personel veritabanından silindi...');
+             return redirect()->to('panel/employeAddView');;
+           } 
+           else{
+            $session =session();
+            session()->setFlashdata('danger','-HATA- Bir hata oluştu');
+            return redirect()->to('panel/employeAddView');
+           }        
+    }
+
 
     public function quit(){
         session_destroy();

@@ -69,7 +69,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('category_insert') ?>" method="post">
+              <form action="<?= base_url('panel/category_insert') ?>" method="post">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Kategori Adı</label>
@@ -104,8 +104,8 @@
               <div class="card-header">
                 <h5 class="card-title"><?php echo $row['name'] ?></h5>
                 <div class="card-tools">
-                <a href="<?= base_url('categoryEditView/'.$row['id']) ?>"  class="btn btn-tool btn-link"><i class="fa fa-pen" aria-hidden="true" style="color:orange"></i></a>
-                <a href="<?= base_url('categoryDelete/'.$row['id']) ?>" onclick="return confirm('Bu kategoriyi silerseniz bu kategorideki ürünlerde silinecektir...')" class="btn btn-tool btn-link"><i class="fa fa-trash" aria-hidden="true" style="color:#cd5c5c"></i></a>
+                <a href="<?= base_url('panel/categoryEditView/'.$row['id']) ?>"  class="btn btn-tool btn-link"><i class="fa fa-pen" aria-hidden="true" style="color:orange"></i></a>
+                <a href="<?= base_url('panel/categoryDelete/'.$row['id']) ?>" onclick="return confirm('Bu kategoriyi silerseniz bu kategorideki ürünlerde silinecektir...')" class="btn btn-tool btn-link"><i class="fa fa-trash" aria-hidden="true" style="color:#cd5c5c"></i></a>
                 </div>
               </div>
             </div>

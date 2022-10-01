@@ -53,7 +53,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="<?= base_url('categoryEdit/'.$categoryId) ?>" method="post">
+              <form action="<?= base_url('panel/categoryEdit/'.$categoryId) ?>" method="post">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Kategori Adı</label>

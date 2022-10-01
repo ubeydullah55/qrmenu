@@ -41,7 +41,7 @@
 
 
               <div class="card-body">
-              <form action="<?= base_url('insertProduct') ?>" method="post" enctype="multipart/form-data">
+              <form action="<?= base_url('panel/insertProduct') ?>" method="post" enctype="multipart/form-data">
               <?php if(session()->get('info')) : ?>             
               <div class="alert alert-info" role="alert">
                  <?php echo session()->getFlashdata('info'); ?>

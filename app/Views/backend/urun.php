@@ -78,8 +78,8 @@
               <div class="card-header">
                 <h5 class="card-title"><?php echo $row['name'] ?></h5>
                 <div class="card-tools">
-                <a href="<?= base_url('productsEditView/'.$row['id']) ?>" class="btn btn-tool btn-link"><i class="fa fa-pen" aria-hidden="true" style="color:orange"></i></a>
-                <a href="<?= base_url('products_info/'.$row['id']."/".$row['is_active']) ?>" class="btn btn-tool btn-link"><i class="fa fa-lock" aria-hidden="true" style="color:#5bc0de"></i></a>
+                <a href="<?= base_url('panel/productsEditView/'.$row['id']) ?>" class="btn btn-tool btn-link"><i class="fa fa-pen" aria-hidden="true" style="color:orange"></i></a>
+                <a href="<?= base_url('panel/products_info/'.$row['id']."/".$row['is_active']) ?>" class="btn btn-tool btn-link"><i class="fa fa-lock" aria-hidden="true" style="color:#5bc0de"></i></a>
                 </div>
               </div>
             </div>
@@ -111,8 +111,8 @@
               <div class="card-header">
                 <h5 class="card-title"><?php echo $row['name'] ?></h5>
                 <div class="card-tools">
-                <a href="<?= base_url('products_info/'.$row['id']."/".$row['is_active']) ?>" class="btn btn-tool btn-link"><i class="fa fa-unlock" aria-hidden="true" style="color:#b8860b"></i></a>
-                <a href="<?= base_url('productsDelete/'.$row['id']) ?>"  onclick="return confirm('Silmek istediğinize eminmisiniz?')" class="btn btn-tool btn-link"><i class="fa fa-trash" aria-hidden="true" style="color:#cd5c5c"></i></a>
+                <a href="<?= base_url('panel/products_info/'.$row['id']."/".$row['is_active']) ?>" class="btn btn-tool btn-link"><i class="fa fa-unlock" aria-hidden="true" style="color:#b8860b"></i></a>
+                <a href="<?= base_url('panel/productsDelete/'.$row['id']) ?>"  onclick="return confirm('Silmek istediğinize eminmisiniz?')" class="btn btn-tool btn-link"><i class="fa fa-trash" aria-hidden="true" style="color:#cd5c5c"></i></a>
                 </div>
               </div>
             </div>

@@ -55,18 +55,20 @@ $routes->group('panel', static function ($routes) {
     $routes->get('callView', 'Home::call_view');
     $routes->get('callDelete/(:num)', 'Home::callDelete/$1');
     $routes->post('productEdit/(:num)', 'Home::productEdit/$1');
-
+    $routes->post('employeInsert', 'Home::employeInsert');
+    $routes->get('employeDelete/(:num)', 'Home::employeDelete/$1');
     $routes->get('employeAddView', static function () { 
+        $modelPersonel= new \App\Models\KullaniciModel;
+        $data['personel']=$modelPersonel->findAll();
         return view('backend/employeAddView',$data);
     });
+
     $routes->get('productInsertView', static function () {
         $modelcategories= new \App\Models\UserModel;
         $data['category']=$modelcategories->findAll();
         return view('/backend/productInsertView',$data);
     });
 
-
-    
     $routes->post('insertProduct', 'Home::insertProduct');
     $routes->get('quit', 'Home::quit');
 });
