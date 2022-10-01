@@ -56,7 +56,7 @@
         <img style="max-width:100%;height: auto;" src="<?= base_url('assets/frontend/images/logo1.png'); ?>" alt="logo_resim" srcset="">
         </div>
         <h2>
-         Lezzet Lokantasıı
+         Lezzet Lokantası
         </h2>
         <br>
      <?php $table_no=$_GET["id"]; ?>
