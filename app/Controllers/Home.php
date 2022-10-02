@@ -34,7 +34,7 @@ class Home extends BaseController
         $data['employe'] = $modelEmploye->findAll();
         $data['categoryCount'] = count($data['category']);
         $data['productCount'] = count($data['product']);
-        $data['employeCount'] = count($data['employe']);
+        $data['employeCount'] =  count($data['employe']);
         return view('backend/panel', $data);
     }
 
@@ -406,6 +406,14 @@ class Home extends BaseController
         }
     }
 
+    public function settingsInsert()
+    {
+        $img = $this->request->getFile('logo_img');
+        if ($img->isValid()) {
+            $imgName = $img->getRandomName();
+            $img->move('img/settings/', $imgName);
+        }
+    }
 
     public function quit()
     {
