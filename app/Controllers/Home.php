@@ -398,7 +398,7 @@ class Home extends BaseController
         if (!empty($employeDelete)) {
             $session = session();
             session()->setFlashdata('info', '-BAŞARILI-Personel veritabanından silindi...');
-            return redirect()->to('panel/employeAddView');;
+            return redirect()->to('panel/employeAddView');
         } else {
             $session = session();
             session()->setFlashdata('danger', '-HATA- Bir hata oluştu');
@@ -406,13 +406,51 @@ class Home extends BaseController
         }
     }
 
-    public function settingsInsert()
+    public function settingsInsert($id)
     {
+        $modelsettings = new \App\Models\SettingsModel;
+        $companyName = $this->request->getPost('companyName');
+        $instagramUrl = $this->request->getPost('instagramUrl');
+        $facebookUrl = $this->request->getPost('facebookUrl');
+        $tiwtterUrl = $this->request->getPost('twitterUrl');
+        $location = $this->request->getPost('location');
+        $phone = $this->request->getPost('phone');
+        $mail = $this->request->getPost('mail');
+        $hakkımızda = $this->request->getPost('hakkımızda');
+        $haftaIci = $this->request->getPost('haftaIci');
+        $haftaSonu = $this->request->getPost('haftaSonu');
+
         $img = $this->request->getFile('logo_img');
         if ($img->isValid()) {
             $imgName = $img->getRandomName();
-            $img->move('img/settings/', $imgName);
+            //     $img->move('img/settings/', $imgName);
+        } else {
+            $imgName = "";
         }
+
+        $insertGroup = array(
+            'companyName' => $companyName,
+            'instagramUrl' => $instagramUrl,
+            'twitterUrl' => $tiwtterUrl,
+            'facebookUrl' => $facebookUrl,
+            'location' => $instagramUrl,
+            'phone' => $phone,
+            'location' => $location,
+            'hakkımızda' => $hakkımızda,
+            'haftaIci' => $haftaIci,
+            'haftaSonu' => $haftaSonu,
+            'img' => $imgName
+        );
+        $editSettings = $modelsettings->where('id', $id)->set($insertGroup)->update();
+        //echo $companyName . "<br>" . $instagramUrl . "<br>" . $facebookUrl . "<br>" . $instagramUrl . "<br>" . $location . "<br>" . $phone . "<br>" . $mail . "<br>" . $hakkımızda . "<br>" . $haftaIci . "<br>" . $haftaSonu . "<br>" . $imgName;
+        if (!empty($editSettings)) {
+            $session = session();
+            session()->setFlashdata('info', '-BAŞARILI-Ekleme işlemi yapıldı...');
+        } else {
+            $session = session();
+            session()->setFlashdata('danger', '-HATA- Bir hata oluştu');
+        }
+        return redirect()->to('panel/settingsView');
     }
 
     public function quit()
