@@ -61,11 +61,14 @@
                     Dogan Lokantası
                 </h2>
                 <br>
-                <?php $table_no = $_GET["id"]; ?>
+                <?php if ($_GET) : ?>
+                <?php $table_no = $_GET["id"]; ?>               
                 <a href="<?= base_url('call/' . $table_no) ?>"><button type="submit"
                         style="background-color:#FF5733; color:white;" type="button" class="btn btn"><b>GARSON
                             ÇAĞIR</b></button></a>
                 <br>
+                <?php endif; ?>
+                               
                 <?php if (session()->get('info')) : ?>
                 <div class="alert alert-info" style="text-align:center;" role="alert">
                     <?php echo session()->getFlashdata('info'); ?>

@@ -36,7 +36,7 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Anasayfa::index');
-
+$routes->get('call/(:num)', 'Anasayfa::call/$1');
 $routes->get('/login', 'Login::index');
 $routes->post('/login/kontrol', 'Login::kontrol');
 
@@ -50,8 +50,7 @@ $routes->group('panel', static function ($routes) {
     $routes->get('categoryDelete/(:num)', 'Home::categoryDelete/$1');
     $routes->get('products_info/(:num)/(:num)', 'Home::productsInfo/$1/$2');
     $routes->get('productsDelete/(:num)', 'Home::productsDelete/$1');
-    $routes->get('productsEditView/(:num)', 'Home::productsEditView/$1');
-    $routes->get('call/(:num)', 'Anasayfa::call/$1');
+    $routes->get('productsEditView/(:num)', 'Home::productsEditView/$1');   
     $routes->get('callView', 'Home::call_view');
     $routes->get('callDelete/(:num)', 'Home::callDelete/$1');
     $routes->post('productEdit/(:num)', 'Home::productEdit/$1');
