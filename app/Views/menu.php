@@ -58,7 +58,7 @@
                     }  ?>" alt="logo_resim" srcset="">
                 </div>
                 <h2>
-                    Dogan Lokantasıııdırbu
+                    Dogan Lokantasıı
                 </h2>
                 <br>
                 <?php if ($_GET) : ?>
