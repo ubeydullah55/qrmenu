@@ -20,11 +20,13 @@ class Anasayfa extends Controller
   {
     $modelcall = new \App\Models\CallWaiterModel;
     //qrcode ile girilmemişse table_no=null şartı koyup yönlendirme yapılacak
-    if ($table_no = 999) {
+    /*
+    if ($table_no == 9999) {
       $session = session();
       session()->setFlashdata('danger', '-HATA-Garson çarğırmak için qr cod ile giriş yapmalısınız...');
       return redirect()->to(base_url('/?id=' . $table_no));
     }
+    */
     $rule = array(
       'table_no' => $table_no,
       'time' => date('H:i')
