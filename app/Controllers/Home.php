@@ -406,12 +406,22 @@ class Home extends BaseController
         }
     }
 
-    public function settingsInsert()
+    public function settingsInsert($id)
     {
+        $changeLogoControl=0;
+        $changeFavIconControl=0;
+        $modelSettings = new \App\Models\SettingsModel;
         $img = $this->request->getFile('logo_img');
         if ($img->isValid()) {
             $imgName = $img->getRandomName();
             $img->move('img/settings/', $imgName);
+            $changeLogoControl=1;
+        }
+        $imgFavIcon = $this->request->getFile('favIcon_img');
+        if ($imgFavIcon->isValid()) {
+            $imgName2 = $imgFavIcon->getRandomName();
+            $imgFavIcon->move('img/settings/', $imgName2);
+            $changeFavIconControl=1;
         }
         $companyName = $this->request->getPost('CompanyName');
         $instagramUrl = $this->request->getPost('instagramUrl');
@@ -423,6 +433,57 @@ class Home extends BaseController
         $hakkimizda = $this->request->getPost('hakkimizda');
         $haftaIci = $this->request->getPost('haftaIci');
         $haftaSonu = $this->request->getPost('haftaSonu');
+
+        
+        if($id>0)//veritabanında bir kayıt varsa
+        {
+            if($changeFavIconControl==1){$settingsUpdate = $modelSettings->where('id', $id)->set('favIcon_url', $imgName2)->update();}
+            if($changeLogoControl==1){$settingsUpdate = $modelSettings->where('id', $id)->set('logo_url', $imgName)->update();}
+            if($changeFavIconControl==1 && $changeLogoControl==1){$settingsUpdate = $modelSettings->where('id', $id)->set('logo_url', $imgName,'favIcon_url', $imgName2)->update();}    
+            $changeGroup = array(
+                'companyName' => $companyName,
+                'instagramUrl' => $instagramUrl,
+                'twitterUrl' => $twitterUrl,
+                'facebookUrl' => $facebookUrl,
+                'location' => $location,
+                'phone' => $phone,
+                'mail' => $mail,
+                'hakkimizda' => $hakkimizda,
+                'haftaIci' => $haftaIci,
+                'haftaSonu' => $haftaSonu
+            );     
+            $settingsUpdate = $modelSettings->where('id', $id)->set($changeGroup)->update();
+            if ($settingsUpdate) {
+                $session = session();
+                session()->setFlashdata('info', '-BAŞARILI-Ayar güncelleme işlemi yapılmıştır');
+                return redirect()->to('panel/settingsView');
+            }           
+        }
+        else //veritabanında kayıt yoksa insert yapılacak
+        {
+            $changeGroup = array(
+                'companyName' => $companyName,
+                'instagramUrl' => $instagramUrl,
+                'twitterUrl' => $twitterUrl,
+                'facebookUrl' => $facebookUrl,
+                'location' => $location,
+                'phone' => $phone,
+                'mail' => $mail,
+                'hakkimizda' => $hakkimizda,
+                'haftaIci' => $haftaIci,
+                'haftaSonu' => $haftaSonu,
+                'logo_url' => $imgName,
+                'favIcon_url' => $imgName2
+            );
+            $settingsInsert = $modelSettings->insert($changeGroup);
+            if ($settingsInsert) {
+                $session = session();
+                session()->setFlashdata('info', '-BAŞARILI-Ayar ekleme işlemi yapılmıştır');
+                return redirect()->to('panel/settingsView');
+            }     
+        }
+        
+       
     }
 
     public function quit()

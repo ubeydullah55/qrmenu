@@ -70,10 +70,14 @@ $routes->group('panel', static function ($routes) {
 
     $routes->get('settingsView', static function () {
         helper('settings');
-        $data['settings'] = settingsGet()['settings'];
-        return view('/backend/settingsView', $data);
+        if(!empty(settingsGet()['settings']))
+        {
+            $data['settings'] = settingsGet()['settings'];           
+        }
+        return view('/backend/settingsView',$data);
+        
     });
-    $routes->post('settingsInsert', 'Home::settingsInsert');
+    $routes->post('settingsInsert/(:num)', 'Home::settingsInsert/$1');
     $routes->post('insertProduct', 'Home::insertProduct');
     $routes->get('quit', 'Home::quit');
 });

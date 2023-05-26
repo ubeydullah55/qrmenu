@@ -41,7 +41,7 @@
 
 
                         <div class="card-body">
-                            <form action="<?= base_url('panel/settingsInsert') ?>" method="post"
+                            <form action="<?= base_url('panel/settingsInsert/'.$settings['id']) ?>" method="post"
                                 enctype="multipart/form-data">
                                 <?php if (session()->get('info')) : ?>
                                 <div class="alert alert-info" role="alert">
@@ -78,15 +78,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">İşletme Adresi</label>
-                                        <input type="text" class="form-control" name="location" id="exampleInputEmail1"> value="<?= $settings['location'] ?>"
+                                        <input type="text" class="form-control" name="location" value="<?= $settings['location'] ?>" id="exampleInputEmail1"> 
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telefon Numarası</label>
-                                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1"> value="<?= $settings['phone'] ?>"
+                                        <input type="text" class="form-control" name="phone" value="<?= $settings['phone'] ?>" id="exampleInputEmail1"> 
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Mail Adresi</label>
-                                        <input type="mail" class="form-control" name="mail" id="exampleInputEmail1"> value="<?= $settings['mail'] ?>"
+                                        <input type="mail" class="form-control" name="mail" value="<?= $settings['mail'] ?>" id="exampleInputEmail1"> 
                                     </div>
                                     <div class="form-group">
                                         <label>İşletme Tanıtımı</label>
@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Hafta İçi Çalışma Saatleri</label>
-                                        <input type="text" class="form-control" name="haftaIci" id="exampleInputEmail1"> value="<?= $settings['haftaIci'] ?>"
+                                        <input type="text" class="form-control" name="haftaIci" value="<?= $settings['haftaIci'] ?>" id="exampleInputEmail1"> 
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Hafta Sonu Çalışma Saatleri</label>
@@ -106,6 +106,15 @@
                                         <div class="input-group">
                                             <div class="custom-file">
                                                 <input type="file" name="logo_img">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Favicon Resim</label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" name="favIcon_img">
                                             </div>
                                         </div>
                                     </div>

@@ -8,5 +8,5 @@ class SettingsModel extends Model
 {
     protected $table      = 'settings';
 
-    protected $allowedFields = ['id', 'logo_url', 'companyName', 'instagramUrl', 'tiwtterUrl', 'facebookUrl', 'location', 'phone', 'mail', 'hakkimizda', 'haftaIci', 'haftaSonu'];
+    protected $allowedFields = ['id', 'logo_url', 'favIcon_url', 'companyName', 'instagramUrl', 'twitterUrl', 'facebookUrl', 'location', 'phone', 'mail', 'hakkimizda', 'haftaIci', 'haftaSonu'];
 }
