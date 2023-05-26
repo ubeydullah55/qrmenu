@@ -413,6 +413,16 @@ class Home extends BaseController
             $imgName = $img->getRandomName();
             $img->move('img/settings/', $imgName);
         }
+        $companyName = $this->request->getPost('CompanyName');
+        $instagramUrl = $this->request->getPost('instagramUrl');
+        $twitterUrl = $this->request->getPost('twitterUrl');
+        $facebookUrl = $this->request->getPost('facebookUrl');
+        $location = $this->request->getPost('location');
+        $phone = $this->request->getPost('phone');
+        $mail = $this->request->getPost('mail');
+        $hakkimizda = $this->request->getPost('hakkimizda');
+        $haftaIci = $this->request->getPost('haftaIci');
+        $haftaSonu = $this->request->getPost('haftaSonu');
     }
 
     public function quit()

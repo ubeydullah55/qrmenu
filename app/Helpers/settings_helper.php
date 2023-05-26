@@ -14,7 +14,7 @@ function settingsGet()
         'location' => $data['settings']['location'],
         'phone' => $data['settings']['phone'],
         'mail' => $data['settings']['mail'],
-        'hakkımızda' => $data['settings']['hakkımızda'],
+        'hakkimizda' => $data['settings']['hakkimizda'],
         'haftaIci' => $data['settings']['haftaIci'],
         'haftaSonu' => $data['settings']['haftaSonu'],
     );
