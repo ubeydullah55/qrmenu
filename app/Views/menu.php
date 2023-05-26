@@ -45,20 +45,21 @@
         <div class="container">
             <div class="heading_container heading_center">
                 <div class="logo">
-                    <a href=""><img style="max-width:7%;height: auto;"
+                    <a href="<?= $settings['facebookUrl'] ?>"><img style="max-width:7%;height: auto;"
                             src="<?= base_url('img/settings/iconsFacebook.png'); ?>" alt="resim" srcset=""></a>
-                    <a href=""><img style="max-width:7%;height: auto;"
+                    <a href="<?= $settings['twitterUrl'] ?>"><img style="max-width:7%;height: auto;"
                             src="<?= base_url('img/settings/iconsTwitter.png'); ?>" alt="resim" srcset=""></a>
-                    <a href=""><img style="max-width:7%;height: auto;"
+                    <a href="<?= $settings['instagramUrl'] ?>"><img style="max-width:7%;height: auto;"
                             src="<?= base_url('img/settings/iconsInstagram.png'); ?>" alt="resim" srcset=""></a>
                     <br>
                     <img style="max-width:40%;height: auto;" src="
                     <?php if (isset($settings['logo_url'])) {
-                      echo base_url('assets/frontend/images/' . $settings['logo_url']);
+                      echo base_url('img/settings/'.$settings['logo_url']);
+                      
                     }  ?>" alt="logo_resim" srcset="">
                 </div>
                 <h2>
-                    Dogan Lokantası
+                    <?= $settings['companyName'] ?>
                 </h2>
                 <br>
                 <?php if ($_GET) : ?>
@@ -66,9 +67,9 @@
                 <a href="<?= base_url('call/' . $table_no) ?>"><button type="submit"
                         style="background-color:#FF5733; color:white;" type="button" class="btn btn"><b>GARSON
                             ÇAĞIR</b></button></a>
-                <br>
+                
                 <?php endif; ?>
-                               
+                  <br>             
                 <?php if (session()->get('info')) : ?>
                 <div class="alert alert-info" style="text-align:center;" role="alert">
                     <?php echo session()->getFlashdata('info'); ?>
@@ -138,13 +139,13 @@
                             <a href="">
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                                 <span>
-                                    Location
+                                <?= $settings['location'] ?>
                                 </span>
                             </a>
                             <a href="">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                                 <span>
-                                    Call +01 1234567890
+                                    <?php echo $settings['phone'] ?>
                                 </span>
                             </a>
                             <a href="">
@@ -162,8 +163,7 @@
                             Hakkımızda
                         </a>
                         <p>
-                            Necessary, making this the first true generator on the Internet. It uses a dictionary of
-                            over 200 Latin words, combined with
+                        <?= $settings['hakkimizda'] ?>
                         </p>
 
                     </div>
@@ -176,13 +176,13 @@
                         Hafta İçi
                     </p>
                     <p>
-                        10.00 Am -10.00 Pm
+                    <?= $settings['haftaIci'] ?>
                     </p>
                     <p>
                         Hafta Sonu
                     </p>
                     <p>
-                        10.00 Am -10.00 Pm
+                    <?= $settings['haftaSonu'] ?>
                     </p>
                 </div>
             </div>

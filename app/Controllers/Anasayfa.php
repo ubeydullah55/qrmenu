@@ -10,7 +10,9 @@ class Anasayfa extends Controller
   {
     $modelcategories = new \App\Models\UserModel;
     $modelproducts = new \App\Models\ProductsModel;
+    $modelSettings = new \App\Models\SettingsModel;
     $data['category'] = $modelcategories->findAll();
+    $data['settings'] = $modelSettings->findAll();
     $data['products'] = $modelproducts->where('is_active', 1)->findAll();
     helper('settings');
     $data['settings'] = settingsGet()['settings'];
