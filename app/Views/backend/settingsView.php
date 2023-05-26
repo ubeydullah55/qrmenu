@@ -58,47 +58,47 @@
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">İşletme İsmi</label>
-                                        <input type="text" class="form-control" name="CompanyName"
+                                        <input type="text" class="form-control" name="CompanyName" value="<?= $settings['companyName'] ?>"
                                             id="exampleInputEmail1" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">İnstagram Adresi</label>
-                                        <input type="text" class="form-control" name="instagramUrl"
+                                        <input type="text" class="form-control" name="instagramUrl" value="<?= $settings['instagramUrl'] ?>"
                                             id="exampleInputEmail1">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Twitter Adresi</label>
-                                        <input type="text" class="form-control" name="twitterUrl"
+                                        <input type="text" class="form-control" name="twitterUrl" value="<?= $settings['twitterUrl'] ?>"
                                             id="exampleInputEmail1">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Facebook Adresi</label>
-                                        <input type="text" class="form-control" name="facebookUrl"
+                                        <input type="text" class="form-control" name="facebookUrl" value="<?= $settings['facebookUrl'] ?>"
                                             id="exampleInputEmail1">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">İşletme Adresi</label>
-                                        <input type="text" class="form-control" name="location" id="exampleInputEmail1">
+                                        <input type="text" class="form-control" name="location" id="exampleInputEmail1"> value="<?= $settings['location'] ?>"
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Telefon Numarası</label>
-                                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1">
+                                        <input type="text" class="form-control" name="phone" id="exampleInputEmail1"> value="<?= $settings['phone'] ?>"
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Mail Adresi</label>
-                                        <input type="mail" class="form-control" name="mail" id="exampleInputEmail1">
+                                        <input type="mail" class="form-control" name="mail" id="exampleInputEmail1"> value="<?= $settings['mail'] ?>"
                                     </div>
                                     <div class="form-group">
                                         <label>İşletme Tanıtımı</label>
-                                        <textarea class="form-control" name="hakkımızda" rows="3"></textarea>
+                                        <textarea class="form-control" name="hakkimizda" rows="3"><?= $settings['hakkimizda'] ?></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Hafta İçi Çalışma Saatleri</label>
-                                        <input type="text" class="form-control" name="haftaIci" id="exampleInputEmail1">
+                                        <input type="text" class="form-control" name="haftaIci" id="exampleInputEmail1"> value="<?= $settings['haftaIci'] ?>"
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Hafta Sonu Çalışma Saatleri</label>
-                                        <input type="text" class="form-control" name="haftaSonu"
+                                        <input type="text" class="form-control" name="haftaSonu" value="<?= $settings['haftaSonu'] ?>"
                                             id="exampleInputEmail1">
                                     </div>
                                     <div class="form-group">
