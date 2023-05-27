@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Collapsed Sidebar</title>
+  <title>Doğan Cafe</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -25,7 +25,7 @@
       </li>
     </ul>
 
-    <!-- Right navbar links -->
+    <!-- Right navbar links --> 
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">

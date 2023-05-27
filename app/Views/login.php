@@ -17,8 +17,13 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-  <img style="max-width:100%;height: auto;" src="<?= base_url(''); ?>/assets/frontend/images/logo1.png" alt="logo">
-    <a href="#"><b>Dogan</b>Lokantası</a>
+  <img style="max-width:80%;height: auto;" src="
+                    <?php if (isset($settings['logo_url'])) {
+                      echo base_url('img/settings/'.$settings['logo_url']);
+                      
+                    }  ?>" alt="logo_resim" srcset="">
+  
+    <a href="#"><b><?= $settings['companyName'] ?></a>
   </div>
   <?php if(session()->get('danger')) : ?>             
               <div class="alert alert-danger" role="alert">
@@ -32,7 +37,7 @@
 
       <form action="<?= base_url('login/kontrol'); ?>" method="post">
         <div class="input-group mb-3">
-          <input type="tel" class="form-control" name="k_adi" placeholder="Telefon no giriniz...." required>
+          <input type="number" class="form-control" name="k_adi" placeholder="Telefon no giriniz...." required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-phone"></span>

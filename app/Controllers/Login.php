@@ -8,8 +8,12 @@ class Login extends Controller
 {
     public function index()
     {
-      
-        return view('login');
+      helper('settings');
+      if(!empty(settingsGet()['settings']))
+      {
+          $data['settings'] = settingsGet()['settings'];           
+      }
+        return view('login',$data);
     }
 
     public function kontrol()

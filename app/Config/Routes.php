@@ -37,6 +37,8 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Anasayfa::index');
 $routes->get('call/(:num)', 'Anasayfa::call/$1');
+
+
 $routes->get('/login', 'Login::index');
 $routes->post('/login/kontrol', 'Login::kontrol');
 

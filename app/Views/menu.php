@@ -13,7 +13,7 @@
     <meta name="author" content="" />
     <link rel="shortcut icon" href="<?= base_url('assets/frontend'); ?>/images/favicon.png" type="">
 
-    <title> Feane </title>
+    <title><?= $settings['companyName'] ?></title>
 
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/frontend'); ?>/css/bootstrap.css" />

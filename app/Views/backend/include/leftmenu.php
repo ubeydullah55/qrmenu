@@ -4,7 +4,7 @@
     <a href="<?= base_url('assets/backend'); ?>/index3.html" class="brand-link">
         <img src="<?= base_url('assets/backend'); ?>/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">QR Menu</span>
+        <span class="brand-text font-weight-light">Doğan Cafe></span>
     </a>
 
     <!-- Sidebar -->
