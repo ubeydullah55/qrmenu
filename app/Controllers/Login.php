@@ -21,6 +21,7 @@ class Login extends Controller
       if($this->request->getMethod() =='post'){
         $k_adi=$this->request->getPost('k_adi');
         $k_sifre=$this->request->getPost('k_sifre');
+        $k_sifre=md5($k_sifre);
         $user=$model->where('k_adi',$k_adi)->first();
         if(empty($user)){
           $session =session();

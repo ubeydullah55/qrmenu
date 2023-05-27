@@ -358,6 +358,7 @@ class Home extends BaseController
         $employeSurName = $this->request->getPost('employeSurName');
         $employeNumber = $this->request->getPost('employeNumber');
         $employePassword = $this->request->getPost('employePassword');
+        $employePassword=md5($employePassword);
         $unvan = $this->request->getPost('unvan');
         $unvanNo = 2;
         if ($unvan == "GARSON") {
