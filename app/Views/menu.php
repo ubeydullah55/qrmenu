@@ -11,7 +11,10 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <link rel="shortcut icon" href="<?= base_url('assets/frontend'); ?>/images/favicon.png" type="">
+    <link rel="shortcut icon" href="<?php if (isset($settings['favIcon_url'])) {
+                      echo base_url('img/settings/'.$settings['favIcon_url']);
+                      
+                    }  ?>" type="">
 
     <title><?= $settings['companyName'] ?></title>
 
@@ -226,8 +229,8 @@
             </div>
             <div class="footer-info">
                 <p>
-                    <a href="https://html.design/">
-                        &copy; <span id="displayYear"></span> Distributed By DoganBilisim</a>
+                    <a href="">
+                        &copy; <span id="displayYear"></span> Distributed By SolutionSoftware</a>
                 </p>
             </div>
         </div>
