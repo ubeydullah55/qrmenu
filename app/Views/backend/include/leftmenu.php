@@ -4,7 +4,7 @@
     <a href="<?= base_url('assets/backend'); ?>/index3.html" class="brand-link">
         <img src="<?= base_url('assets/backend'); ?>/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Doğan Cafe></span>
+        <span class="brand-text font-weight-light">Doğan Cafe</span>
     </a>
 
     <!-- Sidebar -->
@@ -96,14 +96,15 @@
                 </li>
                 <?php endif ?>
                 <?php if ($session->get('yetki') == 0 || $session->get('yetki') == 1) : ?>
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="fa fa-qrcode" style="color:#7BF55A " aria-hidden="true"></i>
                         <p>
                             Qr cod Oluştur
                         </p>
                     </a>
-                </li>
+                </li> 
+                -->
                 <?php endif ?>
                 <?php if ($session->get('yetki') == 0) : ?>
                 <li class="nav-item">

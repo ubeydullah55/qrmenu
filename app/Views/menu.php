@@ -39,28 +39,65 @@
 
 <body class="sub_page">
 
+<div class="hero_area">
+    <div class="bg-box">
+      <img src="<?= base_url('assets/frontend'); ?>/images/hero-bg.jpg" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="">
+            <span>
+            <?= $settings['companyName'] ?>
+            </span>
+          </a>
+
+         <!-- üst taraf kategori ekleme <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav  mx-auto " style="color: white">
+                
+                <li class="active" data-filter="*">All</li>
+                <?php foreach ($category as $item) { ?>
+                <li data-filter=".<?php echo $item['id']; ?>"><?php echo $item['name']; ?></li>
+                <?php } ?>
+
+            </ul>
+            </ul>
+            --> 
+
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
 
     <!-- food section -->
-    <section class="food_section layout_padding">
+    <section class="food_section layout_padding" style="padding:40px">
         <div class="container">
             <div class="heading_container heading_center">
                 <div class="logo">
-                    <a href="<?= $settings['facebookUrl'] ?>"><img style="max-width:7%;height: auto;"
+             
+                <a href="<?= $settings['facebookUrl'] ?>"><img style="max-width:7%;height: auto;"
                             src="<?= base_url('img/settings/iconsFacebook.png'); ?>" alt="resim" srcset=""></a>
                     <a href="<?= $settings['twitterUrl'] ?>"><img style="max-width:7%;height: auto;"
                             src="<?= base_url('img/settings/iconsTwitter.png'); ?>" alt="resim" srcset=""></a>
                     <a href="<?= $settings['instagramUrl'] ?>"><img style="max-width:7%;height: auto;"
                             src="<?= base_url('img/settings/iconsInstagram.png'); ?>" alt="resim" srcset=""></a>
                     <br>
-                    <img style="max-width:40%;height: auto;" src="
+                    
+                    <img style="max-width:50%;height: auto;" src="
                     <?php if (isset($settings['logo_url'])) {
                       echo base_url('img/settings/'.$settings['logo_url']);
                       
                     }  ?>" alt="logo_resim" srcset="">
                 </div>
-                <h2>
-                    <?= $settings['companyName'] ?>
-                </h2>
                 <br>
                 <?php if ($_GET) : ?>
                 <?php $table_no = $_GET["id"]; ?>               
@@ -69,8 +106,9 @@
                             ÇAĞIR</b></button></a>
                 
                 <?php endif; ?>
-                  <br>             
+                              
                 <?php if (session()->get('info')) : ?>
+                    <br> 
                 <div class="alert alert-info" style="text-align:center;" role="alert">
                     <?php echo session()->getFlashdata('info'); ?>
                 </div>
@@ -85,7 +123,7 @@
             </div>
 
             <ul class="filters_menu">
-                <li class="active" data-filter="*">All</li>
+                <li class="active" data-filter="*">Tüm ürünler</li>
                 <?php foreach ($category as $item) { ?>
                 <li data-filter=".<?php echo $item['id']; ?>"><?php echo $item['name']; ?></li>
                 <?php } ?>
@@ -151,7 +189,7 @@
                             <a href="">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                                 <span>
-                                    demo@gmail.com
+                                <?php echo $settings['mail'] ?>
                                 </span>
                             </a>
                         </div>

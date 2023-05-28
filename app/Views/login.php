@@ -23,7 +23,12 @@
                       
                     }  ?>" alt="logo_resim" srcset="">
   
-    <a href="#"><b><?= $settings['companyName'] ?></a>
+
+    <!--<a href="#"><b><?php if(isset($settings['companyName'])) 
+    {
+      echo $settings['companyName'];
+    } ?></a>
+     -->  
   </div>
   <?php if(session()->get('danger')) : ?>             
               <div class="alert alert-danger" role="alert">
@@ -33,7 +38,7 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Qr Menü Sistemi</p>
+      <p class="login-box-msg">Qr Menü Sistemi Panel Giriş</p>
 
       <form action="<?= base_url('login/kontrol'); ?>" method="post">
         <div class="input-group mb-3">
@@ -58,6 +63,7 @@
           </div>
           <!-- /.col -->
         </div>
+        <i><p class="login-box-msg" style="text-align:center; color:gray;">-SolutionSoftware-</p></i>
       </form>
 
     
